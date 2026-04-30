@@ -384,4 +384,16 @@ video {
 .rotate-video {
     /* もし逆回転が必要な場合は -90deg に変更してください */
     transform: rotate(-90deg) scale(1.5);
+    cursor: pointer;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .side-by-side-gallery {
+        flex-direction: column;
+    }
+
+    .side-by-side-gallery .ken-burns-wrapper {
+        height: 35vh;
+    }
 }

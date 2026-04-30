@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Setup video
             videos.forEach(video => {
                 video.muted = false; // ensure sound is on
+                // Play automatically since controls are hidden
+                video.play().catch(e => console.log("Autoplay prevented:", e)); 
+                
+                // Toggle play/pause on tap
+                video.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
             });
         }, 1000);
     });
