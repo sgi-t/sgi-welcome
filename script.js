@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide overlay and show content
         startOverlay.style.opacity = '0';
         
-        // Start videos synchronously in the click handler to satisfy browser autoplay policies
+        // Prepare videos synchronously in the click handler to satisfy browser policies
         videos.forEach(video => {
             video.muted = false;
-            video.play().catch(e => console.log("Autoplay prevented:", e));
+            // はじめから流れないように自動再生（video.play()）を削除しました。
+            // これにより、ユーザーが直接タップした時だけ再生されるようになります。
             
             // Add click listener to toggle play/pause on the video's parent wrapper to ensure it catches clicks
             const wrapper = video.closest('.video-wrapper');
