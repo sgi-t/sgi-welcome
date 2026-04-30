@@ -8,6 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', () => {
         // Hide overlay and show content
         startOverlay.style.opacity = '0';
+        
+        // Start videos synchronously in the click handler to satisfy browser autoplay policies
+        videos.forEach(video => {
+            video.muted = false;
+            video.play().catch(e => console.log("Autoplay prevented:", e));
+            
+            // Add click listener to toggle play/pause on the video's parent wrapper to ensure it catches clicks
+            const wrapper = video.closest('.video-wrapper');
+            if (wrapper && !wrapper.dataset.clickBound) {
+                wrapper.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+                wrapper.dataset.clickBound = "true";
+            }
+        });
+
         setTimeout(() => {
             startOverlay.style.display = 'none';
             mainContent.classList.remove('hidden');
@@ -17,22 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Initialize Swipers
             initSwipers();
-
-            // Setup video
-            videos.forEach(video => {
-                video.muted = false; // ensure sound is on
-                // Play automatically since controls are hidden
-                video.play().catch(e => console.log("Autoplay prevented:", e)); 
-                
-                // Toggle play/pause on tap
-                video.addEventListener('click', () => {
-                    if (video.paused) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            });
         }, 1000);
     });
 
@@ -46,6 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             spaceBetween: 10,
         };
