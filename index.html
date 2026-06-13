@@ -16,14 +16,19 @@
 
 <body>
     <!-- Volume Unmute Overlay -->
-    <div id="start-overlay" class="start-overlay">
-        <div class="start-content">
+    <div id="start-overlay" class="start-overlay"
+        style="background-image: url('images/集合写真.JPG'); background-size: cover; background-position: center; position: fixed;">
+        <div class="start-content"
+            style="background: rgba(255, 255, 255, 0.9); padding: 40px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 90%; margin: 0 auto;">
             <h1 class="start-title" style="font-weight: bold;">마치다 총구 SGI × 한국SGI 교류교환회<br><span
                     style="font-size: 1.5rem; color: var(--color-red); margin-top: 5px; display: block;">町田総区×韓国SGI
                     交流交歓会</span></h1>
-            <p class="start-subtitle">동영상의 소리가 포함되어 있습니다.<br>버튼을 터치하여 시작해주세요.</p>
-            <p class="start-subtitle-jp">※本日20時以降にクリックしてください。ボタンをタップして開始してください。</p>
+            <p class="start-subtitle">본일 18시 이후부터 시청 가능합니다. <br>버튼을 터치하여 시작해 주세요.</p>
+            <p class="start-subtitle-jp">※本日の18時以降視聴可能です。ボタンをタップして開始してください。</p>
             <button id="start-btn" class="start-btn">시작하기 / スタート</button>
+            <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">本サイトは8月31日までご覧いただけます。</p>
+            <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">본 사이트는 8월 31일까지 시청하실 수
+                있습니다.</p>
         </div>
     </div>
 
@@ -31,7 +36,12 @@
     <main id="main-content" class="hidden">
         <!-- Hero Section -->
         <section class="hero scene">
-            <div class="hero-bg" style="background-image: url('images/集合写真.JPG');"></div>
+            <div class="hero-bg">
+                <video id="hero-video" autoplay muted playsinline loop
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/集合写真.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="hero-text fade-in-up">
                 <h2 class="hero-ko" style="font-size: 1.8rem; margin-bottom: 15px; font-weight: 300; line-height: 1.4;">
                     사제의 대도, '특구 마치다'에 오신 것을<br>환영합니다！</h2>
@@ -205,13 +215,30 @@
             </div>
         </section>
 
+        <!-- Coming Soon / YouTube Video Placeholder -->
+        <section class="gallery-section scene bg-white">
+            <h3 class="section-title fade-in-up" style="margin-bottom: 20px;">Coming Soon</h3>
+            <div class="message-container fade-in-up" style="margin-bottom: 30px; text-align: center;">
+                <p class="msg-ko" style="font-size: 1.2rem;">추억의 영상이 곧 공개됩니다.</p>
+                <p class="msg-jp" style="font-size: 1rem;">思い出のダイジェスト映像が明日公開されます。</p>
+            </div>
+            <div class="media-container fade-in-up"
+                style="padding: 0; background: #000; overflow: hidden; border-radius: 10px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe src="" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+        </section>
+
         <!-- Closing -->
-        <section class="closing scene bg-white">
+        <section class="closing scene bg-light">
             <div class="closing-text fade-in-up">
                 <h1 class="closing-ko">감사합니다</h1>
                 <p class="closing-jp">ありがとうございました</p>
                 <div class="divider"></div>
-                <p class="date-location">SGI Exchange Meeting</p>
                 <div class="photo-link-wrapper">
                     <a href="https://drive.google.com/drive/folders/1L_BpdSggPiHVbx4kxglJ-FcEJ2_cK-CG?usp=sharing"
                         target="_blank" rel="noopener noreferrer" class="photo-btn">

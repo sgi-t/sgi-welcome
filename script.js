@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Prepare videos synchronously in the click handler to satisfy browser policies
         videos.forEach(video => {
+            if (video.id === 'hero-video') {
+                video.muted = true;
+                video.play().catch(e => console.log('Hero video autoplay failed:', e));
+                return; // Skip the rest for the hero background video
+            }
+
             video.muted = false;
             // はじめから流れないように自動再生（video.play()）を削除しました。
             // これにより、ユーザーが直接タップした時だけ再生されるようになります。
