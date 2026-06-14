@@ -17,7 +17,7 @@
 <body>
     <!-- Volume Unmute Overlay -->
     <div id="start-overlay" class="start-overlay"
-        style="background-image: url('images/韓国記念撮影.jpg'); background-size: cover; background-position: center; position: fixed;">
+        style="background-image: url('images/記念撮影.png'); background-size: cover; background-position: center; position: fixed;">
         <div class="start-content"
             style="background: rgba(255, 255, 255, 0.9); padding: 40px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 90%; margin: 0 auto;">
             <h1 class="start-title" style="font-weight: bold;">마치다 총구 SGI × 한국SGI 교류교환회<br><span
@@ -25,7 +25,7 @@
                     交流交歓会</span></h1>
             <p class="start-subtitle">본일 18시 이후부터 시청 가능합니다. <br>버튼을 터치하여 시작해 주세요.</p>
             <p class="start-subtitle-jp">※本日の18時以降視聴可能です。ボタンをタップして開始してください。</p>
-            <button id="" class="start-btn">시작하기 / スタート</button>
+            <button id="start-btn" class="start-btn">시작하기 / スタート</button>
             <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">本サイトは8月31日までご覧いただけます。</p>
             <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">본 사이트는 8월 31일까지 시청하실 수
                 있습니다.</p>
@@ -39,7 +39,7 @@
             <div class="hero-bg">
                 <video id="hero-video" autoplay muted playsinline loop
                     style="width: 100%; height: 100%; object-fit: cover;">
-                    <source src="images/韓国集合写真.mp4" type="video/mp4">
+                    <source src="images/集合写真（動画）.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="hero-text fade-in-up">
@@ -93,6 +93,23 @@
                 </div>
                 <p class="caption" style="margin-bottom: 10px;">따뜻한 환영 <span class="caption-jp">温かい歓迎</span></p>
             </div>
+
+            <!-- Video -->
+            <div class="media-container fade-in-up">
+                <div class="video-wrapper" style="position: relative;">
+                    <!-- 動画は最初から正しい向きのため、rotate-videoクラスを削除 -->
+                    <video id="departure-video" playsinline loop style="pointer-events: none;">
+                        <source src="images/歓迎動画.mp4" type="video/mp4">
+                        브라우저가 동영상을 지원하지 않습니다.
+                    </video>
+                    <div class="video-overlay"
+                        style="position: absolute; bottom: 10px; right: 10px; color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; pointer-events: none;">
+                        Tap to Play/Pause
+                    </div>
+                </div>
+                <p class="caption">감사의 마음을 담아 <span class="caption-jp">感謝の心を込めて</span></p>
+            </div>
+
         </section>
 
         <!-- Meeting & Exchange -->
@@ -169,22 +186,6 @@
         <section class="gallery-section scene bg-light">
             <h3 class="section-title fade-in-up">또 만나요 <span class="title-jp">またお会いしましょう</span></h3>
 
-            <!-- Video -->
-            <div class="media-container fade-in-up">
-                <div class="video-wrapper" style="position: relative;">
-                    <!-- class="rotate-video" を付与して横向きに回転。コントロールは非表示にしてJSで制御 -->
-                    <video id="departure-video" class="rotate-video" playsinline loop>
-                        <source src="images/送迎動画.mov">
-                        브라우저가 동영상을 지원하지 않습니다.
-                    </video>
-                    <div class="video-overlay"
-                        style="position: absolute; bottom: 10px; right: 10px; color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; pointer-events: none;">
-                        Tap to Play/Pause
-                    </div>
-                </div>
-                <p class="caption">감사의 마음을 담아 <span class="caption-jp">感謝の心を込めて</span></p>
-            </div>
-
             <!-- Departure Slider -->
             <div class="media-container fade-in-up" style="padding:0; overflow:hidden;">
                 <div class="swiper departure-swiper">
@@ -220,7 +221,7 @@
             <h3 class="section-title fade-in-up" style="margin-bottom: 20px;">Coming Soon</h3>
             <div class="message-container fade-in-up" style="margin-bottom: 30px; text-align: center;">
                 <p class="msg-ko" style="font-size: 1.2rem;">추억의 영상이 곧 공개됩니다.</p>
-                <p class="msg-jp" style="font-size: 1rem;">思い出のダイジェスト映像が明日公開されます。</p>
+                <p class="msg-jp" style="font-size: 1rem;">思い出のダイジェスト映像が後日公開されます。</p>
             </div>
             <div class="media-container fade-in-up"
                 style="padding: 0; background: #000; overflow: hidden; border-radius: 10px;">
