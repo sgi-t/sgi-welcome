@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환영합니다 | 町田総区×韓国SGI 交流交歓会</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Volume Unmute Overlay -->
+    <div id="start-overlay" class="start-overlay"
+        style="background-image: url('images/記念撮影.jpg'); background-size: cover; background-position: center; position: fixed;">
+        <div class="start-content"
+            style="background: rgba(255, 255, 255, 0.9); padding: 40px 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); max-width: 90%; margin: 0 auto;">
+            <h1 class="start-title" style="font-weight: bold;">마치다 총구 SGI × 한국SGI 교류교환회<br><span
+                    style="font-size: 1.5rem; color: var(--color-red); margin-top: 5px; display: block;">町田総区×韓国SGI
+                    交流交歓会</span></h1>
+            <p class="start-subtitle">본일 18시 이후부터 시청 가능합니다. <br>버튼을 터치하여 시작해 주세요.</p>
+            <p class="start-subtitle-jp">※本日の18時以降視聴可能です。ボタンをタップして開始してください。</p>
+            <button id="start-btn" class="start-btn">시작하기 / スタート</button>
+            <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">本サイトは8月31日までご覧いただけます。</p>
+            <p style="margin-top: 20px; font-size: 0.95rem; color: #333; font-weight: bold;">본 사이트는 8월 31일까지 시청하실 수
+                있습니다.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+        <!-- Hero Section -->
+        <section class="hero scene">
+            <div class="hero-bg">
+                <video id="hero-video" autoplay muted playsinline loop
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="images/集合写真（動画）.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-text fade-in-up">
+                <h2 class="hero-ko" style="font-size: 1.8rem; margin-bottom: 15px; font-weight: 300; line-height: 1.4;">
+                    사제의 대도, '특구 마치다'에 오신 것을<br>환영합니다！</h2>
+                <h1 class="hero-jp" style="font-size: 2.2rem; font-weight: bold; margin-bottom: 20px;">ようこそ！師弟の大道、特区町田へ！
+                </h1>
+                <h2 class="hero-date" style="font-size: 1.1rem;">한국SGI교류교환회 | 2026.6.14</h2>
+                <h2 class="hero-date-jp" style="font-size: 1.1rem; opacity: 0.8;">韓国SGI交流交歓会 | 2026.6.14</h2>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Message 1 -->
+        <section class="message-section scene bg-white">
+            <div class="message-container fade-in-up">
+                <p class="msg-ko">먼 곳에서 와주셔서 진심으로 감사합니다.<br>오늘 이 자리가 우리 모두에게<br>특별한 만남이 되기를 바랍니다.</p>
+                <p class="msg-jp">遠方からお越しいただき、心より感謝申し上げます。<br>今日という日が、私たちにとって<br>特別な出会いとなりますように。</p>
+            </div>
+        </section>
+
+        <!-- Arrival & Welcome (Slider) -->
+        <section class="gallery-section scene bg-light">
+            <h3 class="section-title fade-in-up">환영 <span class="title-jp">歓迎</span></h3>
+
+            <div class="media-container fade-in-up" style="padding:0; overflow:hidden;">
+                <!-- Swiper -->
+                <div class="swiper welcome-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/歓迎①.png" alt="歓迎1" class="ken-burns-img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/歓迎②.png" alt="歓迎2" class="ken-burns-img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/歓迎③.png" alt="歓迎3" class="ken-burns-img">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <p class="caption" style="margin-bottom: 10px;">따뜻한 환영 <span class="caption-jp">温かい歓迎</span></p>
+            </div>
+
+            <!-- Video -->
+            <div class="media-container fade-in-up">
+                <div class="video-wrapper" style="position: relative;">
+                    <!-- 動画は最初から正しい向きのため、rotate-videoクラスを削除 -->
+                    <video id="departure-video" playsinline loop style="pointer-events: none;">
+                        <source src="images/歓迎動画.mp4" type="video/mp4">
+                        브라우저가 동영상을 지원하지 않습니다.
+                    </video>
+                    <div class="video-overlay"
+                        style="position: absolute; bottom: 10px; right: 10px; color: white; background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; pointer-events: none;">
+                        Tap to Play/Pause
+                    </div>
+                </div>
+                <p class="caption">감사의 마음을 담아 <span class="caption-jp">感謝の心を込めて</span></p>
+            </div>
+
+        </section>
+
+        <!-- Meeting & Exchange -->
+        <section class="gallery-section scene bg-white">
+            <h3 class="section-title fade-in-up">교류와 대화 <span class="title-jp">交流と対話</span></h3>
+
+            <div class="media-container fade-in-up">
+                <div class="side-by-side-gallery">
+                    <div class="ken-burns-wrapper">
+                        <img src="images/会合中.JPG" alt="会合中" class="ken-burns-img">
+                    </div>
+                    <div class="ken-burns-wrapper">
+                        <img src="images/懇親会.JPG" alt="懇親会" class="ken-burns-img">
+                    </div>
+                </div>
+                <p class="caption">마음을 나누는 시간 <span class="caption-jp">心を交わす時間</span></p>
+            </div>
+        </section>
+
+        <!-- Welcome Chorus -->
+        <section class="gallery-section scene bg-light">
+            <h3 class="section-title fade-in-up">환영 합창 <span class="title-jp">歓迎合唱</span></h3>
+            <div class="message-container fade-in-up" style="margin-bottom: 40px; text-align: center;">
+                <p class="msg-ko" style="font-size: 1.2rem;">한국 SGI 회원 여러분을 향한 진심 어린 환영의 마음을 담아,<br>합창단 여러분이 아름다운 노랫소리를
+                    울려 퍼뜨렸습니다.</p>
+                <p class="msg-jp" style="font-size: 1rem;">韓国SGIの皆様への心からの歓迎の想いを乗せて、<br>合唱団の皆様が美しい歌声を響かせました。</p>
+            </div>
+            <div class="media-container fade-in-up" style="background: transparent; box-shadow: none;">
+                <div class="side-by-side-gallery" style="flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <div class="ken-burns-wrapper"
+                        style="height: 25vh; flex: 1 1 30%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="images/chorus_1.png" alt="合唱団1" class="ken-burns-img">
+                    </div>
+                    <div class="ken-burns-wrapper"
+                        style="height: 25vh; flex: 1 1 30%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="images/chorus_2.png" alt="合唱団2" class="ken-burns-img">
+                    </div>
+                    <div class="ken-burns-wrapper"
+                        style="height: 25vh; flex: 1 1 30%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="images/chorus_3.png" alt="合唱団3" class="ken-burns-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Speech -->
+        <section class="gallery-section scene bg-white">
+            <h3 class="section-title fade-in-up">감동의 체험 발표 <span class="title-jp">感動の体験発表</span></h3>
+            <div class="message-container fade-in-up" style="margin-bottom: 40px; text-align: center;">
+                <p class="msg-ko" style="font-size: 1.2rem;">국경을 넘어 서로의 광포 도전과 승리의 실증을 나누었던 감동의 순간.</p>
+                <p class="msg-jp" style="font-size: 1rem;">国境を越え、互いの広布の挑戦と勝利の実証を分かち合った、感動のひととき。</p>
+            </div>
+            <div class="media-container fade-in-up" style="background: transparent; box-shadow: none;">
+                <div class="side-by-side-gallery" style="gap: 15px;">
+                    <div class="ken-burns-wrapper" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="images/speech_1.png" alt="高柳地区部長" class="ken-burns-img">
+                    </div>
+                    <div class="ken-burns-wrapper" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="images/speech_2.png" alt="韓国SGIメンバー" class="ken-burns-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message 2 -->
+        <section class="message-section scene bg-blue text-white">
+            <div class="message-container fade-in-up">
+                <p class="msg-ko">둘도 없는 소중한 인연을 맺은 이 날부터,<br>'사제의 대도'를 함께 걸어 나아가십시다!</p>
+                <p class="msg-jp">かけがえのない絆を結んだこの日から、<br>「師弟の大道」を共に進んでまいりましょう！</p>
+            </div>
+        </section>
+
+        <!-- Departure (Video & Slider) -->
+        <section class="gallery-section scene bg-light">
+            <h3 class="section-title fade-in-up">또 만나요 <span class="title-jp">またお会いしましょう</span></h3>
+
+            <!-- Departure Slider -->
+            <div class="media-container fade-in-up" style="padding:0; overflow:hidden;">
+                <div class="swiper departure-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/送迎.JPG" alt="会合本編1" class="ken-burns-img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/送迎②.JPG" alt="会合本編2" class="ken-burns-img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/送迎③.JPG" alt="会合本編3" class="ken-burns-img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="ken-burns-wrapper"><img src="images/送迎④.jpg" alt="会合本編4" class="ken-burns-img">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon / YouTube Video Placeholder -->
+        <section class="gallery-section scene bg-white">
+            <h3 class="section-title fade-in-up" style="margin-bottom: 20px;">Coming Soon</h3>
+            <div class="message-container fade-in-up" style="margin-bottom: 30px; text-align: center;">
+                <p class="msg-ko" style="font-size: 1.2rem;">추억의 영상이 곧 공개됩니다.</p>
+                <p class="msg-jp" style="font-size: 1rem;">思い出のダイジェスト映像が後日公開されます。</p>
+            </div>
+            <div class="media-container fade-in-up"
+                style="padding: 0; background: #000; overflow: hidden; border-radius: 10px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <iframe src="" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing -->
+        <section class="closing scene bg-light">
+            <div class="closing-text fade-in-up">
+                <h1 class="closing-ko">감사합니다</h1>
+                <p class="closing-jp">ありがとうございました</p>
+                <div class="divider"></div>
+                <div class="photo-link-wrapper">
+                    <a href="https://drive.google.com/drive/folders/1L_BpdSggPiHVbx4kxglJ-FcEJ2_cK-CG?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="photo-btn">
+                        <span class="photo-icon">📸</span>
+                        추억 사진 보기 <span class="photo-btn-jp">/ 写真を見る</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
