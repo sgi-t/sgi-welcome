@@ -1,0 +1,508 @@
+:root {
+    --color-white: #FAFAFA;
+    --color-blue: #0A3A69;
+    /* Deep Korean Blue */
+    --color-red: #C21F39;
+    /* Elegant Korean Red */
+    --color-light: #F0F2F5;
+    --color-dark: #222222;
+    --font-serif: 'Noto Serif KR', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-serif);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+p {
+    font-weight: 300;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Start Overlay */
+.start-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.start-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.start-title {
+    font-size: 1.5rem;
+    color: var(--color-blue);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.start-subtitle {
+    font-size: 1rem;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.start-subtitle-jp {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.start-btn {
+    background-color: var(--color-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(10, 58, 105, 0.3);
+}
+
+.start-btn:hover {
+    background-color: var(--color-red);
+    transform: translateY(-2px);
+}
+
+/* Background Colors */
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+.bg-blue {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+/* Main layout */
+.scene {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: 1;
+    animation: slowZoom 20s infinite alternate;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-ko {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.hero-en {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.hero-jp {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 40px;
+    background-color: white;
+    margin: 10px auto 0;
+    animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    50.1% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+@keyframes slowZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+/* Message Sections */
+.message-container {
+    text-align: center;
+    max-width: 600px;
+}
+
+.msg-ko {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.msg-jp {
+    font-size: 1rem;
+    opacity: 0.7;
+    line-height: 1.8;
+}
+
+.bg-blue .msg-jp {
+    opacity: 0.8;
+}
+
+/* Gallery Sections */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--color-blue);
+}
+
+.title-jp {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-red);
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.media-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 10px;
+}
+
+.ken-burns-wrapper {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.ken-burns-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 10s ease-out;
+}
+
+.media-container.is-visible .ken-burns-img {
+    transform: scale(1.1);
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 60vh;
+    background: #000;
+    cursor: pointer;
+    /* Show it's clickable */
+    overflow: hidden;
+    /* Prevent rotated video from breaking layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Change from contain to cover so it fills the screen even if cut off */
+}
+
+.caption {
+    text-align: center;
+    padding: 15px 0 5px;
+    font-size: 1.1rem;
+}
+
+.caption-jp {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* Closing */
+.closing-text {
+    text-align: center;
+}
+
+.closing-ko {
+    font-size: 3rem;
+    color: var(--color-blue);
+    margin-bottom: 10px;
+}
+
+.closing-jp {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    margin-bottom: 30px;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-red);
+    margin: 0 auto 20px;
+}
+
+.date-location {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #666;
+}
+
+/* Fade In Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Swiper slider styles */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-swiper,
+.departure-swiper {
+    height: 60vh;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--color-blue) !important;
+}
+
+/* Side by side gallery */
+.side-by-side-gallery {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.side-by-side-gallery .ken-burns-wrapper {
+    flex: 1;
+    height: 40vh;
+}
+
+/* Video rotation */
+.rotate-video {
+    /* もし逆回転が必要な場合は -90deg に変更してください */
+    transform: rotate(-90deg) scale(1.5);
+    pointer-events: none;
+    /* Let the wrapper handle the clicks */
+}
+
+.video-wrapper {
+    cursor: pointer;
+    /* Show it's clickable */
+    overflow: hidden;
+    /* Ensure overflow is hidden */
+}
+
+/* Swiper Navigation Customization */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--color-white) !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    margin-top: -15px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 14px !important;
+    font-weight: bold;
+}
+
+/* Photo Button Styles */
+.photo-link-wrapper {
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.8s forwards;
+}
+
+.photo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--color-blue), var(--color-red));
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 16px 36px;
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+    border-radius: 50px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.photo-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(194, 31, 57, 0.4);
+    color: var(--color-white);
+}
+
+.photo-btn:hover::before {
+    left: 100%;
+}
+
+.photo-icon {
+    font-size: 1.6rem;
+}
+
+.photo-btn-jp {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .side-by-side-gallery {
+        flex-direction: column;
+    }
+
+    .side-by-side-gallery .ken-burns-wrapper {
+        height: 35vh;
+    }
+    
+    .photo-btn {
+        padding: 14px 24px;
+        font-size: 1.1rem;
+    }
+    
+    .photo-btn-jp {
+        font-size: 0.8rem;
+    }
+}
